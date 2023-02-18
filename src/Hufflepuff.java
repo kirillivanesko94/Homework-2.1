@@ -1,7 +1,7 @@
 public class Hufflepuff extends Hogwarts{
-    int industriousness;
-    int loyalty;
-    int honesty;
+    private int industriousness;
+    private int loyalty;
+    private int honesty;
 
     public Hufflepuff(String fullName,int powerMagic,
                       int transgressionDistance, int industriousness, int loyalty, int honesty) {
@@ -33,6 +33,20 @@ public class Hufflepuff extends Hogwarts{
 
     public void setHonesty(int honesty) {
         this.honesty = honesty;
+    }
+    private int calculatePower(){
+        return industriousness + loyalty + honesty;
+    }
+    public void compare(Hufflepuff hufflepuff){
+        System.out.println("***********************************");
+        if (this.calculatePower() > hufflepuff.calculatePower()){
+            System.out.println(this.getFullName() + " лучший Пуффендуец, чем " + hufflepuff.getFullName());
+        } else {
+            System.out.println(hufflepuff.getFullName() + " лучший Пуффендуец, чем " + this.getFullName());
+        }
+        if (this.calculatePower() == hufflepuff.calculatePower()){
+            System.out.println("Силы равны");
+        }
     }
 
 }

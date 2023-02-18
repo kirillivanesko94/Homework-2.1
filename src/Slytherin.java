@@ -1,9 +1,9 @@
 public class Slytherin extends Hogwarts{
-    int cunning;
-    int determination;
-    int ambition;
-    int resourcefulness;
-    int lustForPower;
+    private int cunning;
+    private int determination;
+    private int ambition;
+    private int resourcefulness;
+    private int lustForPower;
 
     public Slytherin(String fullName,int powerMagic, int transgressionDistance, int cunning,
                      int determination, int ambition, int resourcefulness, int lustForPower) {
@@ -54,4 +54,19 @@ public class Slytherin extends Hogwarts{
     public void setLustForPower(int lustForPower) {
         this.lustForPower = lustForPower;
     }
+    private int calculatePower(){
+        return cunning + resourcefulness + lustForPower + ambition + determination;
+    }
+    public void compare(Slytherin slytherin){
+        System.out.println("***********************************");
+        if (this.calculatePower() > slytherin.calculatePower()){
+            System.out.println(this.getFullName() + " лучший Слизеринец, чем " + slytherin.getFullName());
+        } else {
+            System.out.println(slytherin.getFullName() + " лучший Слизеринец, чем " + this.getFullName());
+        }
+        if (this.calculatePower() == slytherin.calculatePower()){
+            System.out.println("Силы равны");
+        }
+    }
 }
+

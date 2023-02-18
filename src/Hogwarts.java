@@ -33,4 +33,18 @@ public class Hogwarts {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
+    private int calculatePower(){
+        return powerMagic + transgressionDistance;
+    }
+    public void compare(Hogwarts hogwarts){
+        System.out.println("***********************************");
+        if (this.calculatePower() > hogwarts.calculatePower()){
+            System.out.println(this.getFullName() + " обладает большей магией, чем " + hogwarts.getFullName());
+        } else {
+            System.out.println(hogwarts.getFullName() + " обладает большей магией, чем " + this.getFullName());
+        }
+        if (this.calculatePower() == hogwarts.calculatePower()){
+            System.out.println("Силы равны");
+        }
+    }
 }
